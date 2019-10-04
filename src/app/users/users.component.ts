@@ -15,6 +15,7 @@ export class UsersComponent implements OnInit {
                                {Id: 4, Name: "Roc Nadal", Email: "roc@roc.com", City: "Manresa"}];
 
   public newUser: User = {Id: 0, Name: "", Email: "", City: ""};
+  public selectedUser: User = {Id: 0, Name: "", Email: "", City: ""};
 
   constructor() {
 
