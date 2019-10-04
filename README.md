@@ -1,27 +1,54 @@
-# Ajmanresa
+## Curs Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.7.
+### Instal·lar NodeJS (>=10.9) i NPM
 
-## Development server
+```
+brew install node
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Comprovar que s'ha instal·lat bé
 
-## Code scaffolding
+```
+node --version
+npm --version
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Instal·lar [AngularCLI](https://cli.angular.io/)
 
-## Build
+```
+npm install -g @angular/cli
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Comprovar que s'ha instal·lat bé
 
-## Running unit tests
+```
+ng help
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Crear el projecte `ajmanresa`
 
-## Running end-to-end tests
+```
+ng new ajmanresa
+cd ajmanresa
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Servir el site a localhost
 
-## Further help
+```
+ng serve
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[http://localhost:4200](http://localhost:4200)
+
+### Fer el build
+
+```
+ng build --prod
+cd dist/ajmanresa
+```
+
+### Crear el nou component `users`
+
+```
+ng generate component users
+```
