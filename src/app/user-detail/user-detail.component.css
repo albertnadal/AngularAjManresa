@@ -1,0 +1,13 @@
+span {
+  font-weight: bold;
+}
+
+.profile-container {
+  margin-top: 20px;
+  border:1px solid gray;
+  width: 750px;
+}
+
+.profile-property {
+  margin: 10px 0px 10px 10px;
+}
