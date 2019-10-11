@@ -1,0 +1,43 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Picture</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>City</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.Id}}</td>
+    <td>
+      <img src="http://lafruitera.com/test/{{user.Id}}.png" width="80px">
+    </td>
+    <td>{{user.Name}}</td>
+    <td>{{user.Email}}</td>
+    <td>{{user.City}}</td>
+    <td style="width:60px">
+      <button (click)="delUser(user)">🗑️</button>
+      <button (click)="selectedUser=user">🔎</button>
+    </td>
+  </tr>
+  <tr class="add-user-row">
+    <td>
+      <input type="number" class="form-control" [(ngModel)]="newUser.Id" style="width: 70px;"/>
+    </td>
+    <td></td>
+    <td>
+      <input class="form-control" [(ngModel)]="newUser.Name" />
+    </td>
+    <td>
+      <input class="form-control" [(ngModel)]="newUser.Email" />
+    </td>
+    <td>
+      <input class="form-control" [(ngModel)]="newUser.City" />
+    </td>
+    <td>
+      <button (click)="addUser()">Add</button>
+    </td>
+  </tr>
+</table>
+
+<UserDetail [user]="selectedUser"></UserDetail>

@@ -1,0 +1,23 @@
+table {
+  width: 750px;
+  border: 1px solid gray;
+}
+
+th {
+  background-color: lightgray;
+  height: 30px;
+}
+
+td {
+  text-align: center;
+  height: 30px;
+  border-bottom: 1px solid #d3d3d338;
+}
+
+.add-user-row td {
+  background-color: #d3d3d338;
+}
+
+input, button {
+  font-size: 16px;
+}
