@@ -1,6 +1,39 @@
-<div class="profile-container">
-  <div class="profile-property"><span>Id:</span> {{user.Id}}</div>
-  <div class="profile-property"><span>Name:</span> {{user.Name}}</div>
-  <div class="profile-property"><span>Email:</span> {{user.Email}}</div>
-  <div class="profile-property"><span>City:</span> {{user.City}}</div>
+<div class="profile-container" *ngIf="user.Id != 0">
+  <h2>{{user.Name}}</h2><br />
+  <mat-form-field style="width: 20%;">
+    <input type="number" matInput placeholder="Id" [(ngModel)]="user.Id" disabled>
+  </mat-form-field>
+  <mat-form-field style="width: 70%;">
+    <input type="text" matInput placeholder="Nom" [(ngModel)]="user.Name">
+  </mat-form-field>
+  <mat-form-field style="width: 40%;">
+    <input type="text" matInput placeholder="Email" [(ngModel)]="user.Email">
+  </mat-form-field>
+  <mat-form-field style="width: 50%;">
+    <input type="text" matInput placeholder="Municipi" [(ngModel)]="user.City">
+  </mat-form-field>
+  <mat-form-field style="width: 40%;">
+    <input matInput [matDatepicker]="picker" placeholder="Data de naixement" [(ngModel)]="user.Birthdate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-radio-group aria-label="Sexe" [(ngModel)]="user.Gender" style="width: 50%;">
+    <mat-radio-button *ngFor="let gender of genders | keyvalue" value={{gender.value}}>{{gender.key}}</mat-radio-button>
+  </mat-radio-group>
+  <mat-form-field style="width: 40%;">
+    <mat-label>Professió</mat-label>
+    <mat-select [(ngModel)]="user.Profession">
+      <mat-option *ngFor="let profession of professions | keyvalue" [value]="profession.value">
+        {{profession.key}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-checkbox [(ngModel)]="user.Enabled">Actiu</mat-checkbox>
+  <mat-form-field style="width: 90%;">
+    <textarea matInput placeholder="Observacions" [(ngModel)]="user.Description" matTextareaAutosize matAutosizeMinRows=3 matAutosizeMaxRows=5></textarea>
+  </mat-form-field>
+  <div class="action-buttons">
+    <button mat-raised-button color="warn" (click)="delUser()">Delete</button>
+    <button mat-raised-button color="primary" (click)="saveChanges()">Save changes</button>
+  </div>
 </div>

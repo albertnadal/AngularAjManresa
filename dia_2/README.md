@@ -1,4 +1,4 @@
-## Curs Angular
+## Curs Angular dia 2
 
 ### Instal·lar NodeJS (>=10.9) i NPM
 

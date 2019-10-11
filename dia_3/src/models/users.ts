@@ -1,14 +1,15 @@
-enum Gender {
-  MALE,
+export enum Gender {
+  MALE = 0,
   FEMALE
 }
 
-enum Profession {
-  UNEMPLOYED,
+export enum Profession {
+  UNEMPLOYED = 0,
   ENGINEER,
   LAWYER,
   DRIVER,
-  TEACHER
+  TEACHER,
+  STUDENT
 }
 
 export class User {
@@ -17,7 +18,6 @@ export class User {
   Email: string;
   City: string;
   Birthdate?: Date;
-  DNI?: string;
   Description?: string;
   Gender?: Gender;
   Profession?: Profession;

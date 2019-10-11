@@ -7,6 +7,21 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatInputModule,
+  MatButtonModule,
+  MatIconModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  DateAdapter,
+  NativeDateAdapter,
+  MatRadioModule,
+  MatSelectModule,
+  MatFormFieldModule,
+  MatCheckboxModule
+} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,9 +31,21 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatCheckboxModule
   ],
-  providers: [],
+  providers: [
+    { provide: DateAdapter, useClass: NativeDateAdapter },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

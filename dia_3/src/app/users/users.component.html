@@ -5,7 +5,7 @@
     <th>Name</th>
     <th>Email</th>
     <th>City</th>
-    <th></th>
+    <th style="width:200px"></th>
   </tr>
   <tr *ngFor="let user of users">
     <td>{{user.Id}}</td>
@@ -15,29 +15,44 @@
     <td>{{user.Name}}</td>
     <td>{{user.Email}}</td>
     <td>{{user.City}}</td>
-    <td style="width:60px">
-      <button (click)="delUser(user)">🗑️</button>
-      <button (click)="selectedUser=user">🔎</button>
+    <td style="width:200px">
+      <button mat-button color="primary" (click)="delUser(user)">
+        <mat-icon>delete_outline</mat-icon>
+      </button>
+      <button mat-button color="primary" (click)="setSelectedUser(user)">
+        <mat-icon>pageview</mat-icon>
+      </button>
     </td>
   </tr>
   <tr class="add-user-row">
     <td>
-      <input type="number" class="form-control" [(ngModel)]="newUser.Id" style="width: 70px;"/>
+      <mat-form-field style="width: 70px;">
+        <input type="number" matInput placeholder="Id" [(ngModel)]="newUser.Id">
+      </mat-form-field>
     </td>
     <td></td>
     <td>
-      <input class="form-control" [(ngModel)]="newUser.Name" />
+      <mat-form-field>
+        <input type="text" matInput placeholder="Nom" [(ngModel)]="newUser.Name">
+      </mat-form-field>
     </td>
     <td>
-      <input class="form-control" [(ngModel)]="newUser.Email" />
+      <mat-form-field>
+        <input type="text" matInput placeholder="Email" [(ngModel)]="newUser.Email">
+      </mat-form-field>
     </td>
     <td>
-      <input class="form-control" [(ngModel)]="newUser.City" />
+      <mat-form-field>
+        <input type="text" matInput placeholder="Municipi" [(ngModel)]="newUser.City">
+      </mat-form-field>
     </td>
     <td>
-      <button (click)="addUser()">Add</button>
+      <button mat-raised-button color="primary" (click)="addUser()">Add</button>
     </td>
   </tr>
 </table>
 
-<UserDetail [user]="selectedUser"></UserDetail>
+<UserDetail [user]="selectedUser"
+            (didDeleteUserWithId)="deleteUserWithId($event)"
+            (didUpdateUser)="updateUser($event)"
+            ></UserDetail>

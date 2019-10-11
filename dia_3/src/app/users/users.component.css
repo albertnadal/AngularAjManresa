@@ -1,6 +1,7 @@
 table {
-  width: 750px;
+  width: 890px;
   border: 1px solid gray;
+  float: left;
 }
 
 th {
@@ -20,4 +21,9 @@ td {
 
 input, button {
   font-size: 16px;
+}
+
+mat-form-field {
+  background-color: white;
+  padding: 5px;
 }
