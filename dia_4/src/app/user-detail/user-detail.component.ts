@@ -1,0 +1,40 @@
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { User, Gender, Profession } from '../../models/users';
+
+interface GenderData {
+    [key: string]: Gender;
+}
+
+interface ProfessionData {
+    [key: string]: Profession;
+}
+
+@Component({
+  selector: 'UserDetail',
+  templateUrl: './user-detail.component.html',
+  styleUrls: ['./user-detail.component.css']
+})
+export class UserDetailComponent implements OnInit {
+
+  @Input() user: User = {Id: 0, Name: "", Email: "", City: ""};
+  @Output() public didDeleteUserWithId:EventEmitter<number> = new EventEmitter();
+  @Output() public didUpdateUser:EventEmitter<User> = new EventEmitter();
+
+  public genders: GenderData = { "Home": Gender.MALE, "Dona": Gender.FEMALE};
+  public professions: ProfessionData = { "Sense feina": Profession.UNEMPLOYED, "Enginyer": Profession.ENGINEER, "Advocat": Profession.LAWYER, "Conductor": Profession.DRIVER, "Mestre": Profession.TEACHER, "Estudiant": Profession.STUDENT };
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  delUser() {
+    this.didDeleteUserWithId.emit(this.user.Id);
+    this.user = {Id: 0, Name: "", Email: "", City: ""};
+  }
+
+  saveChanges() {
+    this.didUpdateUser.emit(this.user);
+  }
+
+}
