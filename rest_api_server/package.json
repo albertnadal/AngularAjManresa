@@ -1,0 +1,18 @@
+{
+  "name": "api.albiasoft.com",
+  "version": "0.0.0",
+  "description": "API server used for testing",
+  "main": "server.js",
+  "author": "Albert Nadal Garriga <a.nadal@iskra.cat>",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongojs": "^2.6.0",
+    "multer": "^1.4.1",
+    "request": "^2.85.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
