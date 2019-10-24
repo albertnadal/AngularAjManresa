@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { HttpAPIClient } from '../services/HttpAPIClient';
+import { UsersAPIClient } from '../services/UsersAPIClient';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatInputModule,
@@ -41,10 +45,13 @@ import {
     MatRadioModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    HttpClientModule
   ],
   providers: [
     { provide: DateAdapter, useClass: NativeDateAdapter },
+    HttpAPIClient,
+    UsersAPIClient
   ],
   bootstrap: [AppComponent]
 })

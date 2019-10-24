@@ -30,20 +30,11 @@ export class UsersComponent implements OnInit {
   }
 
   delUser(_user: User) {
-    this.users = this.users.filter(e => e !== _user);
+    this.users = this.users.filter(e => e.Id !== _user.Id);
   }
 
   setSelectedUser(_user: User) {
     this.selectedUser = {..._user};
-  }
-
-  deleteUserWithId(userId: number) {
-    for(let i=0; i<this.users.length; i++) {
-      if(this.users[i].Id == userId) {
-        this.delUser(this.users[i]);
-        return;
-      }
-    }
   }
 
   updateUser(_user: User) {

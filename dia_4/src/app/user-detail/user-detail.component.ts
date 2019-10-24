@@ -17,7 +17,7 @@ interface ProfessionData {
 export class UserDetailComponent implements OnInit {
 
   @Input() user: User = {Id: 0, Name: "", Email: "", City: ""};
-  @Output() public didDeleteUserWithId:EventEmitter<number> = new EventEmitter();
+  @Output() public didDeleteUser:EventEmitter<User> = new EventEmitter();
   @Output() public didUpdateUser:EventEmitter<User> = new EventEmitter();
 
   public genders: GenderData = { "Home": Gender.MALE, "Dona": Gender.FEMALE};
@@ -29,7 +29,7 @@ export class UserDetailComponent implements OnInit {
   }
 
   delUser() {
-    this.didDeleteUserWithId.emit(this.user.Id);
+    this.didDeleteUser.emit(this.user);
     this.user = {Id: 0, Name: "", Email: "", City: ""};
   }
 
