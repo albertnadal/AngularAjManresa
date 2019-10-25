@@ -81,6 +81,7 @@ function getUserWithId(userId, callback) {
         if (doc == null) {
           callback(undefined, false);
         } else {
+          delete doc._id;
           callback(doc, true);
         }
 
@@ -127,12 +128,12 @@ function getUsers(callback) {
         "Id": 1,
         "Name": 1,
         "Email": 1,
-	"City": 1,
-	"Enabled": 1,
-	"Gender": 1,
-	"Profession": 1,
-	"Description": 1,
-	"Birthdate": 1
+        "City": 1,
+        "Enabled": 1,
+        "Gender": 1,
+        "Profession": 1,
+        "Description": 1,
+        "Birthdate": 1
       },
       function(err, docs) {
         if (docs == null) {

@@ -63,7 +63,22 @@ export class UsersComponent implements OnInit {
   }
 
   setSelectedUser(_user: User) {
-    this.selectedUser = {..._user};
+    this.usersAPIClient.getUserById(_user.Id).subscribe(
+      data => {
+        this.selectedUser = data;
+        for(let i=0; i<this.users.length; i++) {
+          if(this.users[i].Id == data.Id) {
+            this.users[i] = {...data};
+            return;
+          }
+        }
+      },
+      err => {
+        alert("No s'han pogut obtenir les dades de l'usuari.");
+      },
+      () => {
+      }
+    );
   }
 
   updateUser(_user: User) {

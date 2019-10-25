@@ -65,4 +65,18 @@ export class UsersAPIClient extends HttpAPIClient {
     });
   }
 
+  getUserById(id:Number):any {
+    return Observable.create(observer => {
+      super.getContentFromURL(environment.API_URL+"/users/"+id).subscribe(
+        data => {
+          observer.next(data);
+          observer.complete();
+        }, err => {
+          observer.error(err);
+        }, () => {
+        }
+      );
+    });
+  }
+
 }
