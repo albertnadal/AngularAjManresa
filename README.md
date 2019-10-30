@@ -18,7 +18,7 @@ El primer dia d'aquest curs d'Angular vam explicar de forma molt teòrica els fo
 
 Aquest segon dia del curs és completament pràctic i en el transcurs d'aquest s'implementaran dos components que es comunicaran entre si emprant el two-way data binding d'Angular. Un component implementarà un llistat vertical d'usuaris que ha de permetre llistar els usuaris d'un array, eliminar i afegir nous usuaris. Un segon component secundari permetrà mostrar la fitxa detallada de l'usuari seleccionat del llistat.
 
-## [Dia 3: Two-way Data Binding i Material](https://github.com/albertnadal/AngularAjManresa/tree/master/dia_3)
+## [Dia 3: Model de dades, Two-way Data Binding i Material](https://github.com/albertnadal/AngularAjManresa/tree/master/dia_3)
 
 Aquest tercer dia del curs també serà pràctic i en el transcurs d'aquest es canviaran els components de formulari tradicionals d'HTML emprats el darrer dia per les seves respectives implementacions en components de Material. S'extendrà el formulari del component que mostra la fitxa detallada de l'usuari seleccionat amb nous camps addicinals de Material: calendari, radio buttons, checkboxes, textbox, etc. S'emprarà l'atribut ngModel dels components de Material per a llegir i escriure les dades directament del model de dades de forma automàtica.
 

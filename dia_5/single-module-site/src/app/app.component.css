@@ -1,0 +1,19 @@
+div.menu {
+  padding: 20px;
+  background-color: #ececec;
+  margin-bottom: 20px;
+  border-bottom: solid 1px gray;
+}
+
+div.content {
+  padding: 20px;
+}
+
+button {
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+button.logout {
+  float: right;
+}

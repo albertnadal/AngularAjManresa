@@ -1,0 +1,8 @@
+<div class="menu">
+  <button mat-flat-button color="primary" [routerLink]="['/users']">Usuaris</button>
+  <button mat-flat-button color="primary" [routerLink]="['/news']">Notícies</button>
+  <button mat-flat-button color="primary" [routerLink]="['/logout']" class="logout">Logout</button>
+</div>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
