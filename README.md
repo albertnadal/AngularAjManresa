@@ -30,4 +30,9 @@ Mitjançant l'ús de Dependency Injection el service serà accessible per als co
 
 ## [Dia 5: Routing](https://github.com/albertnadal/AngularAjManresa/tree/master/dia_5)
 
-TODO
+TODO:
+- Routing & Navigation
+- Lazy Loading
+- Angular animations
+- Server-side Rendering (SSR): An intro to Angular Universal
+- Ahead-of-Time (AOT) compiler Vs. Just-in-Time (JIT) compiler
