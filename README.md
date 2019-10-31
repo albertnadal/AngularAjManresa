@@ -1,4 +1,4 @@
-# Curs Angular - Ajuntament de Manresa
+# Curs d'Angular - Ajuntament de Manresa
 
 L'objectiu d'aquest curs és entendre i adquirir els coneixements bàsics necessaris per poder desenvolupar aplicacions web emprant el framework Angular.
 
