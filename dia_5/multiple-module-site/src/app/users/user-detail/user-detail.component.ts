@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { User, Gender, Profession } from '../../models/users';
+import { User, Gender, Profession } from '../../../models/users';
 
 interface GenderData {
     [key: string]: Gender;

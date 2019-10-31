@@ -11,7 +11,7 @@ import { User } from '../../models/users';
   styleUrls: ['./users.component.css'],
   providers: [UsersAPIClient]
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit, OnDestroy {
 
   public users: Array<User> = [];
   public newUser: User = {Id: 0, Name: "", Email: "", City: ""};
