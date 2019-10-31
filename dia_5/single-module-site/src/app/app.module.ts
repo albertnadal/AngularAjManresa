@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { NewsComponent } from './news/news.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpAPIClient } from '../services/HttpAPIClient';
 import { UsersAPIClient } from '../services/UsersAPIClient';
+import { RSSClient } from '../services/RSSClient';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -32,6 +34,7 @@ import {
     AppComponent,
     UsersComponent,
     UserDetailComponent,
+    NewsComponent,
     PageNotFoundComponent
   ],
   imports: [
@@ -53,7 +56,8 @@ import {
   providers: [
     { provide: DateAdapter, useClass: NativeDateAdapter },
     HttpAPIClient,
-    UsersAPIClient
+    UsersAPIClient,
+    RSSClient
   ],
   bootstrap: [AppComponent]
 })

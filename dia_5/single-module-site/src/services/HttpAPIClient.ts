@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
+export type ResponseType = 'arraybuffer' | 'blob' | 'json' | 'text' | 'xml';
+
 @Injectable()
 export class HttpAPIClient {
 
@@ -15,63 +17,63 @@ export class HttpAPIClient {
     return throwError(error_msg);
   }
 
-  public getContentFromURL(url: string):any {
+  public getContentFromURL(url: string, _responseType: ResponseType = 'json'):any {
     let requestURL = url;
 
     const httpHeaders = new HttpHeaders({
-      "Accept": "application/json"
+      "Accept": "application/json,application/xml"
     });
 
     return this.http.get(requestURL, {
       headers: httpHeaders,
-      withCredentials: true,
+      responseType: _responseType as 'text'
     }).pipe(
       catchError(this.handleError.bind(this))
     );
   }
 
-  public deleteContentFromURL(url: string):any {
+  public deleteContentFromURL(url: string, _responseType: ResponseType = 'json'):any {
     let requestURL = url;
 
     const httpHeaders = new HttpHeaders({
-      "Accept": "application/json",
+      "Accept": "application/json,application/xml"
     });
 
     return this.http.delete(requestURL, {
       headers: httpHeaders,
-      withCredentials: true,
+      responseType: _responseType as 'text'
     }).pipe(
       catchError(this.handleError.bind(this))
     );
   }
 
-  public putContentToURL(url: string, content: string):any {
+  public putContentToURL(url: string, content: string, _responseType: ResponseType = 'json'):any {
     let requestURL = url;
 
     const httpHeaders = new HttpHeaders({
-      "Accept": "application/json",
-      "Content-Type": "application/json",
+      "Accept": "application/json,application/xml",
+      "Content-Type": "application/json"
     });
 
     return this.http.put(requestURL, content, {
       headers: httpHeaders,
-      withCredentials: true,
+      responseType: _responseType as 'text'
     }).pipe(
       catchError(this.handleError.bind(this))
     );
   }
 
-  public postContentToURL(url: string, content: string):any {
+  public postContentToURL(url: string, content: string, _responseType: ResponseType = 'json'):any {
     let requestURL = url;
 
     const httpHeaders = new HttpHeaders({
-      "Accept": "application/json",
+      "Accept": "application/json,application/xml",
       'Content-Type': 'application/json'
     });
 
     return this.http.post(requestURL, content, {
       headers: httpHeaders,
-      withCredentials: true,
+      responseType: _responseType as 'text'
     }).pipe(
       catchError(this.handleError.bind(this))
     );

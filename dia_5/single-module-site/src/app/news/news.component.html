@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th style="width:220px">Picture</th>
+    <th style="width:30%">Title</th>
+    <th>Description</th>
+    <th style="width:220px">Date</th>
+  </tr>
+  <tr *ngFor="let item of news">
+    <td>
+      <img [src]="item.image" style="max-width: 100%;">
+    </td>
+    <td>
+      <b>{{item.title}}</b>
+    </td>
+    <td>
+      {{item.description}}
+    </td>
+    <td>
+      {{item.date}}
+    </td>
+  </tr>
+</table>
