@@ -1,0 +1,58 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Picture</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>City</th>
+    <th style="width:200px"></th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.Id}}</td>
+    <td>
+      <img src="http://lafruitera.com/test/{{user.Id}}.png" width="80px">
+    </td>
+    <td>{{user.Name}}</td>
+    <td>{{user.Email}}</td>
+    <td>{{user.City}}</td>
+    <td style="width:200px">
+      <button mat-button color="primary" (click)="delUser(user)">
+        <mat-icon>delete_outline</mat-icon>
+      </button>
+      <button mat-button color="primary" [routerLink]="['/users/'+user.Id]">
+        <mat-icon>pageview</mat-icon>
+      </button>
+    </td>
+  </tr>
+  <tr class="add-user-row">
+    <td>
+      <mat-form-field style="width: 70px;">
+        <input type="number" matInput placeholder="Id" [(ngModel)]="newUser.Id">
+      </mat-form-field>
+    </td>
+    <td></td>
+    <td>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Nom" [(ngModel)]="newUser.Name">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Email" [(ngModel)]="newUser.Email">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Municipi" [(ngModel)]="newUser.City">
+      </mat-form-field>
+    </td>
+    <td>
+      <button mat-raised-button color="primary" (click)="addUser()">Add</button>
+    </td>
+  </tr>
+</table>
+
+<UserDetail [user]="selectedUser"
+            (didDeleteUser)="delUser($event)"
+            (didUpdateUser)="updateUser($event)"
+            ></UserDetail>
