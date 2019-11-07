@@ -13,8 +13,3 @@ button {
   margin-right: 20px;
   font-size: 18px;
 }
-
-button.logout {
-  float: right;
-  margin-right: 0px;
-}
