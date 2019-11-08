@@ -20,7 +20,7 @@ Per defecte Angular genera els bundles emprant la compilació Just-in-Time (JiT)
 
 ![JiT](https://raw.githubusercontent.com/albertnadal/AngularAjManresa/master/dia_5/sample_jit.jpg)
 
-Per a generar els bundles emprant la compilació Ahead-of-Time (AoT) cal fer-ho de la següent manera. La compilació Ahead-of-Time genera uns bundles amb uns tamanys molt més grans per a cada un dels mòduls, però en canvi el temany del bundle del compilador és molt més petit. Els mòduls de la nostra aplicació és compilen al fer el build i, per tant, el navegador web només ha d'executar els fitxers ja compilats.
+La compilació Ahead-of-Time genera uns bundles amb uns tamanys molt més grans per a cada un dels mòduls, però en canvi el temany del bundle del compilador és molt més petit. Els mòduls de la nostra aplicació és compilen al fer el build i, per tant, el navegador web només ha d'executar els fitxers ja compilats. Per a generar els bundles emprant la compilació Ahead-of-Time (AoT) cal fer-ho de la següent manera.
 
 ```
 ng build --aot --output-path build/ --base-href /
