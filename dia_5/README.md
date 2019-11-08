@@ -18,7 +18,7 @@ ng generate module page-not-found --route ** --module app.module
 
 Per defecte Angular genera els bundles emprant la compilació Just-in-Time (JiT):
 
-![JiT](https://raw.githubusercontent.com/albertnadal/AngularAjManresa/master/sample_jit.jpg)
+![JiT](https://raw.githubusercontent.com/albertnadal/AngularAjManresa/master/dia_5/sample_jit.jpg)
 
 Per a generar els bundles emprant la compilació Ahead-of-time (AoT) cal fer-ho de la següent manera.
 
@@ -26,4 +26,4 @@ Per a generar els bundles emprant la compilació Ahead-of-time (AoT) cal fer-ho 
 ng build --aot --output-path build/ --base-href /
 ```
 
-![AoT](https://raw.githubusercontent.com/albertnadal/AngularAjManresa/master/sample_aot.jpg)
+![AoT](https://raw.githubusercontent.com/albertnadal/AngularAjManresa/master/dia_5/sample_aot.jpg)
