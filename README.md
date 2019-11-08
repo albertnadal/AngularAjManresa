@@ -28,10 +28,9 @@ Aquest quart dia del curs començarà amb una primera part pràctica que consist
 
 Mitjançant l'ús de Dependency Injection el service serà accessible per als components implementats durant les sessions anteriors del curs. Els components empraran el service per a realitzar les corresponents operacions de llistar, actualitzar, eliminar i crear usuaris, de manera que totes les dades que es mostrin a l'aplicació coincideixin amb les dades emmagatzemades a la base de dades.
 
-## [Dia 5: Routing/Navigation, Lazy Loading, AOT/JIT i Server-side Rendering](https://github.com/albertnadal/AngularAjManresa/tree/master/dia_5)
+## [Dia 5: Routing/Navigation, Lazy Loading, JiT/AoT i Server-side Rendering](https://github.com/albertnadal/AngularAjManresa/tree/master/dia_5)
 
-TODO:
 - Routing & Navigation
 - Lazy Loading
-- Server-side Rendering (SSR): An intro to Angular Universal
 - Ahead-of-Time (AOT) compiler Vs. Just-in-Time (JIT) compiler
+- Server-side Rendering (SSR): An intro to Angular Universal
